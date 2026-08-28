@@ -4,6 +4,7 @@ from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 import cv2
 from ultralytics import YOLO
+from geometry_msgs.msg import Point
 
 class HumanTrackerNode(Node):
     def __init__(self):
@@ -17,7 +18,8 @@ class HumanTrackerNode(Node):
             '/image_raw',
             self.image_callback,
             10)
-        self.get_logger().info("Hệ thống đã bật! Hãy giơ tay lên quá đầu để khóa mục tiêu. Bấm 'r' để Reset.")
+        self.get_logger().info("Hệ thống đã bật! 11 Hãy giơ tay lên quá đầu để khóa mục tiêu. Bấm 'r' để Reset.")
+        self.target_pub = self.create_publisher(Point, '/target_bbox', 10)
 
     def image_callback(self, msg):
         frame = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
@@ -49,6 +51,12 @@ class HumanTrackerNode(Node):
                 if self.target_id == track_id:
                     cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 4)
                     cv2.putText(frame, f"LOCKED: {track_id}", (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+                    target_msg = Point()
+                    target_msg.x = float((x1 + x2) / 2)  # Tâm X của người
+                    target_msg.y = float((y1 + y2) / 2)  # Tâm Y của người
+                    target_msg.z = float(y2 - y1)        # Chiều cao khung (để đo khoảng cách)
+                    
+                    self.target_pub.publish(target_msg)
                 else:
                     cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 255), 1)
 

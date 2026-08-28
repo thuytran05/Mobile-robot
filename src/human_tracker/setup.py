@@ -24,7 +24,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-		'tracker = human_tracker.tracker_node:main'
+		'tracker_camlap = human_tracker.tracker_camlap:main',
+    		'tracker_astra = human_tracker.tracker_astra:main',
         ],
     },
 )
