@@ -1,0 +1,239 @@
+{
+  "_comment": "Moi intent gom: examples (cau nguoi dung co the noi - cang nhieu cang tot, giup 'tu dien' cua intent phong phu hon), boost_keywords (cum tu chot ha, xuat hien nguyen cum la gan nhu chac chan dung), responses, action, priority (2 = lenh hanh dong, thang intent hoi thong tin khi diem ngang nhau). Them intent moi = them 1 block, KHONG can sua code.",
+
+  "threshold": 40,
+  "fallback_response": "Xin lỗi, tôi chưa hiểu ý bạn. Bạn có thể hỏi tôi về cổng ra máy bay, quầy làm thủ tục, nhà vệ sinh hoặc nhờ tôi dẫn đường.",
+
+  "intents": [
+    {
+      "name": "greeting",
+      "examples": [
+        "xin chào", "chào bạn", "chào robot", "hello", "hi", "alo",
+        "robot ơi", "ê robot", "chào buổi sáng", "chào buổi chiều", "hế lô"
+      ],
+      "boost_keywords": ["xin chào", "chào robot", "chào bạn"],
+      "responses": ["Xin chào! Tôi là robot hỗ trợ hành khách. Tôi có thể giúp gì cho bạn?"],
+      "action": null
+    },
+    {
+      "name": "thanks",
+      "examples": [
+        "cảm ơn", "cám ơn bạn", "thank you", "cảm ơn nhé", "cảm ơn robot",
+        "cảm ơn nhiều", "cám ơn rất nhiều", "thanks nhé"
+      ],
+      "boost_keywords": ["cảm ơn", "cám ơn", "thank you", "thanks"],
+      "responses": ["Rất vui được giúp bạn. Chúc bạn có chuyến bay tốt lành!"],
+      "action": null
+    },
+    {
+      "name": "goodbye",
+      "examples": [
+        "tạm biệt", "bye", "chào tạm biệt", "thôi nhé", "đủ rồi",
+        "vậy thôi", "tôi đi đây", "hẹn gặp lại"
+      ],
+      "boost_keywords": ["tạm biệt", "bye", "hẹn gặp lại"],
+      "responses": ["Tạm biệt bạn, chúc thượng lộ bình an!"],
+      "action": "stop"
+    },
+    {
+      "name": "capability",
+      "examples": [
+        "bạn làm được gì", "bạn giúp được gì", "robot biết làm gì",
+        "bạn có thể làm gì", "hướng dẫn tôi cách hỏi", "robot hỗ trợ gì",
+        "robot làm được những việc gì", "tôi có thể hỏi bạn những gì"
+      ],
+      "boost_keywords": ["làm được gì", "giúp được gì", "biết làm gì"],
+      "responses": [
+        "Tôi có thể chỉ đường tới cổng ra máy bay, quầy làm thủ tục, nhà vệ sinh, khu ăn uống, và trả lời thông tin chuyến bay. Bạn cứ hỏi tự nhiên nhé."
+      ],
+      "action": null
+    },
+
+    {
+      "name": "ask_gate_location",
+      "examples": [
+        "cổng ra máy bay ở đâu", "cổng số mấy", "cho tôi hỏi cổng ở đâu",
+        "gate ở đâu", "tôi muốn tìm cổng", "cổng lên máy bay chỗ nào",
+        "cửa ra máy bay ở đâu", "cổng khởi hành ở đâu", "cổng boarding ở đâu",
+        "tìm cổng ra máy bay giúp tôi", "cổng của tôi ở đâu",
+        "lên máy bay ở cổng nào", "ra máy bay ở cổng nào"
+      ],
+      "boost_keywords": [
+        "cổng ra máy bay", "cửa ra máy bay", "cổng lên máy bay",
+        "cổng khởi hành", "cổng boarding", "cổng số"
+      ],
+      "slot_required": "gate",
+      "responses": [
+        "Cổng {gate} nằm ở {place_desc}. Bạn đi theo biển chỉ dẫn hoặc để tôi dẫn bạn tới đó nhé.",
+        "Bạn muốn tới cổng nào ạ? Ví dụ cổng B2 hoặc cổng 15."
+      ],
+      "action": null
+    },
+    {
+      "name": "ask_checkin",
+      "examples": [
+        "quầy làm thủ tục ở đâu", "check in ở đâu", "tôi làm thủ tục ở đâu",
+        "quầy check in chỗ nào", "làm thủ tục lên máy bay ở đâu", "quầy vé ở đâu",
+        "tôi cần làm thủ tục check in", "khu vực check in ở đâu",
+        "quầy thủ tục hàng không ở đâu", "nộp hành lý ký gửi ở đâu"
+      ],
+      "boost_keywords": [
+        "làm thủ tục", "quầy check in", "quầy thủ tục", "check in", "quầy vé"
+      ],
+      "responses": ["Khu vực quầy làm thủ tục nằm ở {place_desc}."],
+      "place": "checkin",
+      "action": null
+    },
+    {
+      "name": "ask_toilet",
+      "examples": [
+        "nhà vệ sinh ở đâu", "toilet ở đâu", "wc chỗ nào", "cho hỏi nhà vệ sinh",
+        "tôi muốn đi vệ sinh", "phòng vệ sinh gần nhất", "restroom ở đâu",
+        "chỗ nào có nhà vệ sinh", "nhà vệ sinh nam ở đâu", "nhà vệ sinh nữ ở đâu",
+        "cho tôi hỏi toilet"
+      ],
+      "boost_keywords": ["nhà vệ sinh", "toilet", "wc", "restroom", "phòng vệ sinh"],
+      "responses": ["Nhà vệ sinh gần nhất ở {place_desc}."],
+      "place": "toilet",
+      "action": null
+    },
+    {
+      "name": "ask_food",
+      "examples": [
+        "khu ăn uống ở đâu", "nhà hàng ở đâu", "tôi đói", "chỗ nào ăn được",
+        "quán cà phê ở đâu", "có chỗ nào bán đồ ăn không", "tôi muốn ăn gì đó",
+        "khu food court ở đâu", "chỗ nào uống cà phê được", "tôi khát nước quá",
+        "có quán ăn nhanh không", "chỗ nào bán nước uống"
+      ],
+      "boost_keywords": [
+        "khu ăn uống", "food court", "nhà hàng", "quán cà phê", "đói bụng", "tôi đói"
+      ],
+      "responses": ["Khu ăn uống nằm ở {place_desc}."],
+      "place": "food_court",
+      "action": null
+    },
+    {
+      "name": "ask_baggage",
+      "examples": [
+        "băng chuyền hành lý ở đâu", "lấy hành lý ở đâu", "hành lý ký gửi chỗ nào",
+        "chỗ nhận hành lý", "baggage claim", "tôi cần lấy vali",
+        "khu vực trả hành lý ở đâu", "vali của tôi ở đâu", "nhận hành lý ở khu nào"
+      ],
+      "boost_keywords": ["băng chuyền hành lý", "lấy hành lý", "nhận hành lý", "baggage claim"],
+      "responses": ["Khu vực băng chuyền hành lý ở {place_desc}."],
+      "place": "baggage",
+      "action": null
+    },
+    {
+      "name": "ask_info_desk",
+      "examples": [
+        "quầy thông tin ở đâu", "quầy hỗ trợ ở đâu", "tôi cần gặp nhân viên",
+        "chỗ nào có nhân viên sân bay", "quầy trợ giúp", "information desk ở đâu",
+        "tôi cần hỏi nhân viên sân bay", "ai có thể giúp tôi ở đây"
+      ],
+      "boost_keywords": ["quầy thông tin", "quầy hỗ trợ", "gặp nhân viên", "information desk"],
+      "responses": ["Quầy thông tin ở {place_desc}. Nhân viên ở đó sẽ hỗ trợ bạn."],
+      "place": "info_desk",
+      "action": null
+    },
+    {
+      "name": "ask_atm",
+      "examples": [
+        "cây atm ở đâu", "rút tiền ở đâu", "atm chỗ nào", "đổi tiền ở đâu",
+        "tôi cần rút tiền mặt", "quầy đổi ngoại tệ ở đâu", "chỗ nào đổi được đô la"
+      ],
+      "boost_keywords": ["cây atm", "rút tiền", "đổi tiền", "đổi ngoại tệ"],
+      "responses": ["Cây ATM và quầy đổi tiền nằm ở {place_desc}."],
+      "place": "atm",
+      "action": null
+    },
+    {
+      "name": "ask_security",
+      "examples": [
+        "soi chiếu an ninh ở đâu", "cửa an ninh ở đâu", "kiểm tra an ninh chỗ nào",
+        "qua cửa an ninh đi lối nào", "khu vực an ninh ở đâu", "chỗ soi chiếu hành lý",
+        "tôi cần qua an ninh"
+      ],
+      "boost_keywords": ["an ninh", "soi chiếu", "cửa an ninh", "kiểm tra an ninh"],
+      "responses": ["Khu vực kiểm tra an ninh ở {place_desc}."],
+      "place": "security",
+      "action": null
+    },
+
+    {
+      "name": "guide_me",
+      "examples": [
+        "dẫn tôi đến", "đưa tôi tới", "chỉ đường cho tôi", "dẫn đường giúp tôi",
+        "đi cùng tôi tới", "làm ơn dẫn tôi đi", "bạn dẫn tôi đi được không",
+        "robot dẫn tôi đến đó nhé", "cho tôi đi theo bạn", "tôi muốn bạn dẫn đường"
+      ],
+      "boost_keywords": [
+        "dẫn tôi", "đưa tôi", "chỉ đường", "dẫn đường", "đi cùng tôi",
+        "dẫn giúp", "đưa giúp", "dẫn tôi đến", "dẫn tôi đi", "đưa tôi đến"
+      ],
+      "priority": 2,
+      "responses": ["Được ạ, tôi sẽ dẫn bạn tới {place_name}. Bạn vui lòng đi theo tôi."],
+      "action": "navigate"
+    },
+    {
+      "name": "stop_robot",
+      "examples": [
+        "dừng lại", "đứng lại", "stop", "khoan đã", "chờ đã", "dừng",
+        "dừng lại đi", "đợi chút", "khoan hẵng đi"
+      ],
+      "boost_keywords": ["dừng lại", "đứng lại", "stop", "khoan đã", "chờ đã"],
+      "priority": 2,
+      "responses": ["Tôi đã dừng lại."],
+      "action": "stop"
+    },
+    {
+      "name": "go_home",
+      "examples": [
+        "về chỗ cũ", "quay về trạm", "về vị trí sạc", "kết thúc",
+        "robot về trạm sạc đi", "bạn quay về vị trí sạc giúp tôi"
+      ],
+      "boost_keywords": ["về trạm", "trạm sạc", "về vị trí sạc", "quay về trạm"],
+      "priority": 2,
+      "responses": ["Tôi sẽ quay về trạm."],
+      "action": "navigate",
+      "place": "home"
+    },
+
+    {
+      "name": "ask_flight_status",
+      "examples": [
+        "chuyến bay của tôi thế nào", "chuyến bay có đúng giờ không",
+        "tra cứu chuyến bay", "thông tin chuyến bay", "chuyến bay bị hoãn không",
+        "chuyến bay của tôi có bị trễ không", "kiểm tra giờ bay giúp tôi",
+        "chuyến bay số hiệu bao nhiêu", "tôi muốn tra thông tin chuyến bay"
+      ],
+      "boost_keywords": [
+        "chuyến bay", "tra cứu chuyến bay", "thông tin chuyến bay",
+        "giờ bay", "số hiệu chuyến bay"
+      ],
+      "slot_required": "flight",
+      "responses": ["Bạn cho tôi biết số hiệu chuyến bay nhé, ví dụ VN 216."],
+      "action": "query_flight"
+    },
+    {
+      "name": "ask_time",
+      "examples": [
+        "bây giờ là mấy giờ", "mấy giờ rồi", "giờ hiện tại", "xem giờ",
+        "cho tôi hỏi mấy giờ rồi", "bây giờ mấy giờ"
+      ],
+      "boost_keywords": ["mấy giờ", "giờ hiện tại", "bây giờ là mấy giờ"],
+      "responses": ["Bây giờ là {time}."],
+      "action": null
+    },
+    {
+      "name": "ask_wifi",
+      "examples": [
+        "wifi sân bay tên gì", "làm sao kết nối wifi", "mật khẩu wifi",
+        "có wifi không", "wifi miễn phí ở đâu", "tên wifi là gì"
+      ],
+      "boost_keywords": ["wifi", "mật khẩu wifi", "kết nối wifi"],
+      "responses": ["Sân bay có wifi miễn phí tên là Airport-Free-WiFi, bạn kết nối không cần mật khẩu."],
+      "action": null
+    }
+  ]
+}

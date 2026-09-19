@@ -1,0 +1,66 @@
+{
+  "_comment": "x, y, yaw la toa do TREN MAP cua ban (frame 'map'). Lay bang cach: chay Nav2, dung RViz click '2D Pose Estimate'/'Publish Point', hoac 'ros2 topic echo /amcl_pose' khi day robot toi vi tri do.",
+
+  "places": {
+    "checkin": {
+      "name": "quầy làm thủ tục",
+      "desc": "tầng 2, khu vực sảnh A, đi thẳng khoảng 50 mét rồi rẽ trái",
+      "aliases": ["quầy thủ tục", "check in", "checkin", "quầy vé"],
+      "x": 3.5, "y": 1.2, "yaw": 0.0
+    },
+    "toilet": {
+      "name": "nhà vệ sinh",
+      "desc": "ngay bên phải bạn, cách đây khoảng 20 mét, cạnh thang cuốn",
+      "aliases": ["toilet", "wc", "vệ sinh", "phòng vệ sinh"],
+      "x": -2.0, "y": 4.0, "yaw": 1.57
+    },
+    "food_court": {
+      "name": "khu ăn uống",
+      "desc": "tầng 3, phía trên khu vực cách ly, có thang cuốn ngay phía trước",
+      "aliases": ["khu ăn uống", "nhà hàng", "quán ăn", "cà phê", "food court"],
+      "x": 8.0, "y": -3.0, "yaw": 0.0
+    },
+    "baggage": {
+      "name": "băng chuyền hành lý",
+      "desc": "tầng 1, khu vực đến, theo biển chỉ dẫn Baggage Claim",
+      "aliases": ["hành lý", "băng chuyền", "baggage"],
+      "x": 12.0, "y": 2.5, "yaw": -1.57
+    },
+    "info_desk": {
+      "name": "quầy thông tin",
+      "desc": "giữa sảnh chính, ngay dưới bảng thông tin chuyến bay",
+      "aliases": ["quầy thông tin", "quầy hỗ trợ", "information"],
+      "x": 0.5, "y": 0.5, "yaw": 3.14
+    },
+    "atm": {
+      "name": "cây ATM",
+      "desc": "cạnh quầy thông tin, dãy máy ATM và quầy đổi ngoại tệ",
+      "aliases": ["atm", "rút tiền", "đổi tiền"],
+      "x": 1.5, "y": -1.0, "yaw": 0.0
+    },
+    "security": {
+      "name": "cửa an ninh",
+      "desc": "cuối sảnh làm thủ tục, khu vực soi chiếu an ninh",
+      "aliases": ["an ninh", "soi chiếu", "security"],
+      "x": 6.0, "y": 5.0, "yaw": 1.57
+    },
+    "home": {
+      "name": "trạm sạc",
+      "desc": "vị trí chờ của robot",
+      "aliases": ["trạm sạc", "chỗ cũ", "về trạm"],
+      "x": 0.0, "y": 0.0, "yaw": 0.0
+    },
+
+    "gate_a1": { "name": "cổng A1", "desc": "cánh trái nhà ga, đi thẳng 100 mét", "aliases": ["a1", "a một"], "x": -5.0, "y": 10.0, "yaw": 1.57 },
+    "gate_a2": { "name": "cổng A2", "desc": "cánh trái nhà ga, cạnh cổng A1", "aliases": ["a2", "a hai"], "x": -5.0, "y": 13.0, "yaw": 1.57 },
+    "gate_b1": { "name": "cổng B1", "desc": "cánh phải nhà ga, sau khu miễn thuế", "aliases": ["b1", "b một"], "x": 10.0, "y": 10.0, "yaw": 1.57 },
+    "gate_b2": { "name": "cổng B2", "desc": "cánh phải nhà ga, cạnh cổng B1", "aliases": ["b2", "b hai"], "x": 10.0, "y": 13.0, "yaw": 1.57 },
+    "gate_15": { "name": "cổng 15", "desc": "khu vực cách ly quốc tế, tầng 2", "aliases": ["15", "mười lăm"], "x": 14.0, "y": 8.0, "yaw": 0.0 }
+  },
+
+  "flights": {
+    "VN216": { "route": "Hà Nội - Thành phố Hồ Chí Minh", "time": "14 giờ 30", "gate": "cổng B2", "status": "đúng giờ" },
+    "VJ130": { "route": "Hà Nội - Đà Nẵng", "time": "16 giờ 05", "gate": "cổng A1", "status": "hoãn 30 phút" },
+    "QH202": { "route": "Hà Nội - Phú Quốc", "time": "09 giờ 15", "gate": "cổng 15", "status": "đang lên máy bay" }
+  }
+}

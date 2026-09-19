@@ -9,7 +9,7 @@ from geometry_msgs.msg import Point
 class HumanTrackerNode(Node):
     def __init__(self):
         super().__init__('human_tracker_node')
-        self.model = YOLO('yolov8n-pose.pt') 
+        self.model = YOLO('/home/thuytran/ros2_ws/yolov8n-pose.pt')
         self.bridge = CvBridge()
         self.target_id = None
         
