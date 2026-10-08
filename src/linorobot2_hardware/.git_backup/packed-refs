@@ -1,0 +1,11 @@
+# pack-refs with: peeled fully-peeled sorted 
+105a2b0ead36efd345263ef671ba8041c8518955 refs/remotes/origin/foxy
+6d7435f85db0fae10cdb162bb868913f59dc7654 refs/remotes/origin/galactic
+077cfee58d6f7b9fd376857b104158c1b3b696e3 refs/remotes/origin/humble
+5d43f3ec7318d0d2c844351d63eebfd9e8ab25c8 refs/remotes/origin/jazzy
+fbbb29be472f271c1f1c92b144cf799f12f66123 refs/remotes/origin/lyrical
+04b22bf465e7f6e53fdd8403ad1e0daa7bd74d17 refs/remotes/origin/mergify/bp/foxy/pr-73
+6eead7d8c867a9ea4c198dc45517ddd621dbaf21 refs/remotes/origin/mergify/bp/galactic/pr-73
+70aaa34afd29f4f8ccf913fabc07f4b1d91d5034 refs/remotes/origin/mergify/bp/humble/pr-73
+dde151fa4f861aa4711e54967166ef464fbb49bb refs/remotes/origin/platformio-fix
+5d43f3ec7318d0d2c844351d63eebfd9e8ab25c8 refs/remotes/origin/rolling
