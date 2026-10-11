@@ -182,7 +182,9 @@ Kinematics kinematics(
     MOTOR_OPERATING_VOLTAGE, 
     MOTOR_POWER_MAX_VOLTAGE, 
     WHEEL_DIAMETER, 
-    LR_WHEELS_DISTANCE
+    (Kinematics::LINO_BASE == Kinematics::MECANUM)
+        ? (LR_WHEELS_DISTANCE + FR_WHEELS_DISTANCE)
+        : LR_WHEELS_DISTANCE
 );
 
 Odometry odometry;

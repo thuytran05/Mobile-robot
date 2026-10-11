@@ -92,20 +92,21 @@ ROBOT ORIENTATION
 #define COUNTS_PER_REV2 1240                // wheel2 encoder's no of ticks per rev
 #define COUNTS_PER_REV3 1442                // wheel3 encoder's no of ticks per rev
 #define COUNTS_PER_REV4 1559                // wheel4 encoder's no of ticks per rev
-#define WHEEL_DIAMETER 0.1              // wheel's diameter in meters
-#define LR_WHEELS_DISTANCE 0.21           // distance between left and right wheels
+#define WHEEL_DIAMETER 0.097              // wheel's diameter in meters
+#define LR_WHEELS_DISTANCE 0.205           // distance between left and right wheels
+#define FR_WHEELS_DISTANCE 0.178 // khoảng cách tâm bánh trước–sau, mét
 #define PWM_BITS 8                         // PWM Resolution of the microcontroller
 #define PWM_FREQUENCY 20000                 // PWM Frequency
 
 // INVERT ENCODER COUNTS
-#define MOTOR1_ENCODER_INV true
-#define MOTOR2_ENCODER_INV false
-#define MOTOR3_ENCODER_INV false
-#define MOTOR4_ENCODER_INV true
+#define MOTOR1_ENCODER_INV false
+#define MOTOR2_ENCODER_INV true
+#define MOTOR3_ENCODER_INV true
+#define MOTOR4_ENCODER_INV false
 
 // INVERT MOTOR DIRECTIONS
-#define MOTOR1_INV true
-#define MOTOR2_INV false
+#define MOTOR1_INV false
+#define MOTOR2_INV true
 #define MOTOR3_INV false
 #define MOTOR4_INV true
 
@@ -134,13 +135,13 @@ ROBOT ORIENTATION
 #define MOTOR2_IN_B 15
 
 // L298N #2 - Rear
-#define MOTOR3_PWM 16
-#define MOTOR3_IN_A 17
-#define MOTOR3_IN_B 18
+#define MOTOR3_PWM 21
+#define MOTOR3_IN_A 41  // Đổi từ 35
+#define MOTOR3_IN_B 42  // Đổi từ 36
 
-#define MOTOR4_PWM 21
-#define MOTOR4_IN_A 41  // Đổi từ 35
-#define MOTOR4_IN_B 42  // Đổi từ 36
+#define MOTOR4_PWM 16
+#define MOTOR4_IN_A 17
+#define MOTOR4_IN_B 18
 
 #define PWM_MAX (pow(2, PWM_BITS) - 1)
 #define PWM_MIN (-PWM_MAX)
